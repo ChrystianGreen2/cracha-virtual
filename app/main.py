@@ -8,3 +8,7 @@ app = FastAPI()
 Base.metadata.create_all(bind=engine)
 
 app.include_router(user_router, prefix="/api")
+
+@app.get("/")
+def read_root():
+    return {"message": "Bem-vindo à minha API!"}
